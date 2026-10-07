@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Architetti di Sicilia · Mappa commerciale Ellesse Rappresentanze</title>
+<meta name="description" content="64 studi di architettura in Sicilia da visitare per promuovere serramenti, porte, pavimenti, tende e chiusure automatiche. A cura di Ellesse Rappresentanze.">
+<meta property="og:title" content="Architetti di Sicilia · Mappa commerciale Ellesse">
+<meta property="og:description" content="64 studi di architettura siciliani, con specializzazione e prodotti da proporre.">
+<meta property="og:type" content="website">
+<style>
+  :root {
+    --bg:#0c1220; --bg2:#121a2c; --card:#161f36; --border:rgba(255,255,255,.09);
+    --txt:#eef2fa; --txt2:#a8b4cc; --dim:#7c88a3; --orange:#ff7a2f; --green:#3ddc97;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:radial-gradient(1200px 600px at 80% -10%,#1d2a4a 0%,var(--bg) 55%) no-repeat,var(--bg);
+    color:var(--txt); font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+    line-height:1.55; padding-bottom:60px;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+
+  header{padding:44px 0 30px;border-bottom:1px solid var(--border)}
+  .brand{display:flex;align-items:center;gap:11px;margin-bottom:22px}
+  .mark{width:40px;height:40px;border-radius:11px;flex:none;
+    background:linear-gradient(135deg,var(--orange),#ff4d6d);
+    display:grid;place-items:center;font-weight:900;font-size:15px;color:#fff;letter-spacing:-.5px}
+  .brand b{font-size:15px;letter-spacing:.2px}
+  .brand small{display:block;color:#9aa8c4;font-size:12px;font-weight:500}
+  h1{font-size:clamp(26px,6vw,44px);line-height:1.1;letter-spacing:-1px;font-weight:850}
+  h1 em{font-style:normal;color:var(--orange)}
+  .sub{color:var(--txt2);margin-top:14px;font-size:clamp(14px,3.6vw,16.5px);max-width:68ch}
+
+  .kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:10px;margin-top:26px}
+  .k{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px 16px}
+  .k b{display:block;font-size:26px;font-weight:850;letter-spacing:-.6px}
+  .k span{color:#9aa8c4;font-size:11.5px;text-transform:uppercase;letter-spacing:.7px;font-weight:700}
+
+  .toolbar{position:sticky;top:0;z-index:30;background:rgba(12,18,32,.94);
+    backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:11px 0}
+  .toolbar .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .f{background:var(--card);border:1px solid var(--border);color:var(--txt2);
+    padding:8px 14px;border-radius:999px;font-size:13px;font-weight:650;cursor:pointer;transition:.15s;
+    font-family:inherit}
+  .f:hover{border-color:var(--orange);color:var(--txt)}
+  .f[aria-pressed="true"]{background:var(--orange);border-color:var(--orange);color:#fff}
+  #q{flex:1;min-width:160px;background:var(--card);border:1px solid var(--border);color:var(--txt);
+    padding:9px 15px;border-radius:999px;font-size:13.5px;font-family:inherit;outline:none}
+  #q:focus{border-color:var(--orange)}
+  #q::placeholder{color:#8b97b1;opacity:1}
+  .row-lbl{width:100%;color:var(--dim);font-size:10px;font-weight:800;
+    text-transform:uppercase;letter-spacing:.8px;margin-top:2px}
+
+  h2{font-size:clamp(20px,4.8vw,27px);letter-spacing:-.5px;margin:44px 0 0;font-weight:850;
+    display:flex;flex-wrap:wrap;align-items:baseline;gap:12px}
+  h2 .line{display:block;height:3px;width:46px;background:var(--orange);border-radius:2px;
+    margin-top:10px;flex-basis:100%;order:9}
+  .h-count{font-size:12.5px;font-weight:600;color:var(--dim)}
+  .h-note{color:var(--txt2);font-size:14px;margin-top:12px;max-width:72ch}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:14px;margin-top:20px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;
+    display:flex;flex-direction:column;gap:10px;transition:.18s}
+  .card:hover{border-color:rgba(255,122,47,.42);transform:translateY(-2px)}
+  .c-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+  .c-head h3{font-size:16.5px;letter-spacing:-.3px;line-height:1.25;font-weight:800}
+  .tier{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;
+    padding:4px 9px;border-radius:999px;white-space:nowrap;flex:none}
+  .t1{background:rgba(255,122,47,.16);color:#ffa06a;border:1px solid rgba(255,122,47,.34)}
+  .t2{background:rgba(79,140,255,.14);color:#8fb4ff;border:1px solid rgba(79,140,255,.32)}
+  .t3{background:rgba(255,255,255,.06);color:var(--dim);border:1px solid var(--border)}
+  .citta{font-size:11.5px;color:var(--dim);font-weight:650}
+  .meta{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px}
+  .meta dt{color:var(--dim);font-size:10px;text-transform:uppercase;letter-spacing:.6px;font-weight:750}
+  .meta dd{color:var(--txt2)}
+  .spec{font-size:13.5px;color:var(--txt);font-weight:600}
+  .note{font-size:12.8px;color:var(--txt2)}
+  .why{font-size:12.8px;color:var(--txt2);background:rgba(61,220,151,.07);
+    border-left:2px solid var(--green);border-radius:0 9px 9px 0;padding:9px 12px}
+  .why span{display:block;color:var(--green);font-size:10px;font-weight:800;
+    text-transform:uppercase;letter-spacing:.6px;margin-bottom:3px}
+  .proponi{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+  .proponi .lbl{color:var(--dim);font-size:10px;font-weight:800;
+    text-transform:uppercase;letter-spacing:.6px;width:100%}
+  .chip{font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:999px;
+    color:var(--c);background:color-mix(in srgb,var(--c) 15%,transparent);
+    border:1px solid color-mix(in srgb,var(--c) 38%,transparent)}
+  .foot{margin-top:auto;padding-top:11px;border-top:1px solid var(--border)}
+  .sito{color:var(--orange);font-size:12.5px;text-decoration:none;font-weight:650;word-break:break-all}
+  .sito:hover{text-decoration:underline}
+  .nosito{color:var(--dim);font-size:12px;font-style:italic}
+
+  .panel{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:20px;margin-top:20px}
+  .steps{list-style:none;display:grid;gap:13px}
+  .steps li{display:flex;gap:13px;font-size:14px;color:var(--txt2)}
+  .steps b{flex:none;width:25px;height:25px;border-radius:8px;background:var(--orange);
+    color:#fff;display:grid;place-items:center;font-size:12.5px;font-weight:850}
+  .mandanti{display:flex;flex-wrap:wrap;gap:7px;margin-top:4px}
+  .ordine{display:grid;gap:5px;font-size:14px;color:var(--txt2)}
+  .ordine a{color:var(--orange);text-decoration:none}
+
+  footer{margin-top:46px;padding-top:22px;border-top:1px solid var(--border);
+    color:var(--dim);font-size:12.5px;display:grid;gap:5px}
+  footer b{color:var(--txt2)}
+  .empty{display:none;padding:40px 0;color:var(--dim);font-size:14px}
+
+  @media (max-width:560px){ .grid{grid-template-columns:1fr} header{padding:32px 0 22px} }
+  @media print{
+    body{background:#fff;color:#111} .toolbar{display:none}
+    .card,.panel,.k{border-color:#ddd;background:#fff;break-inside:avoid}
+    .card h3,.spec{color:#111} .note,.why{color:#333} h1 em{color:#c2410c} .citta{color:#666}
+  }
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <div class="brand">
+    <div class="mark">ER</div>
+    <div><b>Ellesse Rappresentanze</b><small>Serramenti · Porte · Pavimenti · Schermature · Chiusure</small></div>
+  </div>
+  <h1>Architetti di <em>Sicilia</em><br>mappa per la rete commerciale</h1>
+  <p class="sub"><b>64 studi di architettura</b> in tutta la Sicilia, da andare a trovare.
+    Per ciascuno: chi sono, su cosa progettano, perché vale una visita e
+    <b>quali dei nostri prodotti proporre per primi</b>. Ordinati per provincia,
+    con filtro per priorità e ricerca.</p>
+  <div class="kpi">
+    <div class="k"><b>64</b><span>studi in mappa</span></div>
+    <div class="k"><b>9</b><span>province</span></div>
+    <div class="k"><b>23</b><span>priorità alta</span></div>
+    <div class="k"><b>9</b><span>mandanti</span></div>
+  </div>
+</div></header>
+
+<div class="toolbar"><div class="wrap">
+  <span class="row-lbl">Priorità</span>
+  <button class="f" data-t="0" aria-pressed="true">Tutte</button>
+  <button class="f" data-t="1" aria-pressed="false">Priorità 1</button>
+  <button class="f" data-t="2" aria-pressed="false">Priorità 2</button>
+  <button class="f" data-t="3" aria-pressed="false">Priorità 3</button>
+  <input id="q" type="search" placeholder="Cerca studio, città o prodotto…" autocomplete="off">
+  <span class="row-lbl">Provincia</span>
+  <button class="f prov" data-p="" aria-pressed="true">Tutte</button>
+  <button class="f prov" data-p="Palermo" aria-pressed="false">Palermo <small style="opacity:.6">24</small></button><button class="f prov" data-p="Catania" aria-pressed="false">Catania <small style="opacity:.6">11</small></button><button class="f prov" data-p="Ragusa" aria-pressed="false">Ragusa <small style="opacity:.6">7</small></button><button class="f prov" data-p="Trapani" aria-pressed="false">Trapani <small style="opacity:.6">7</small></button><button class="f prov" data-p="Agrigento" aria-pressed="false">Agrigento <small style="opacity:.6">6</small></button><button class="f prov" data-p="Caltanissetta" aria-pressed="false">Caltanissetta <small style="opacity:.6">3</small></button><button class="f prov" data-p="Siracusa" aria-pressed="false">Siracusa <small style="opacity:.6">3</small></button><button class="f prov" data-p="Messina" aria-pressed="false">Messina <small style="opacity:.6">2</small></button><button class="f prov" data-p="Enna" aria-pressed="false">Enna <small style="opacity:.6">1</small></button>
+</div></div>
+
+<main class="wrap">
+
+  <h2 style="margin-top:34px">Come leggere le priorità<span class="line"></span></h2>
+  <p class="h-note"><b>Priorità 1</b> = più volume potenziale e miglior incrocio con i nostri prodotti
+    (hospitality, opere pubbliche, restauro, grandi residenziale). <b>Priorità 2</b> = buon fit sulle
+    ristrutturazioni. <b>Priorità 3</b> = realtà da esplorare, spesso più facili da aprire come nuovo fornitore.
+    Le priorità sono calate sul <b>fit con i nostri nove mandanti</b>, non su una classifica assoluta di prestigio.</p>
+
+  <section class="prov-block" data-prov="Palermo">
+    <h2>Palermo<span class="line"></span>
+      <span class="h-count">24 studi · 10 di priorità alta</span>
+    </h2>
+    <div class="grid">
+
+    <article class="card" data-prov="Palermo" data-tier="1"
+      data-cerca="am3 studio palermo architettura e paesaggio, ambito pubblico e privato, concorsi biemme ditec novoferm gerflor">
+      <div class="c-head">
+        <h3>AM3 Studio</h3>
+        <span class="tier t1">Priorità 1</span>
+      </div>
+      <div class="citta">📍 Palermo</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>2011</dd></div>
+        <div><dt>Chi</dt><dd>Marco Alesi, Cristina Calì, Alberto Cusumano</dd></div>
+      </dl>
+      <p class="spec">Architettura e paesaggio, ambito pubblico e privato, concorsi</p>
+      <p class="note">Lungomare di Balestrate, nuova sede Regione Siciliana. Selezionato per il Padiglione Italia alla Biennale di Venezia.</p>
+      <div class="why"><span>Perché vale una visita</span>Profilo autorevole e opere pubbliche: qui girano capitolati e forniture importanti.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#3ddc97">Ditec</span><span class="chip" style="--c:#f6c453">Novoferm</span><span class="chip" style="--c:#8b7cff">Gerflor</span></div>
+      <div class="foot"><a class="sito" href="https://am3studio.it" target="_blank" rel="noopener">am3studio.it</a></div>
+    </article>
+
+    <article class="card" data-prov="Palermo" data-tier="1"
+      data-cerca="cannone architetti palermo architettura e ingegneria, spazio aperto, scala urbana, interior ditec novoferm gerflor biemme">
+      <div class="c-head">
+        <h3>Cannone Architetti</h3>
+        <span class="tier t1">Priorità 1</span>
+      </div>
+      <div class="citta">📍 Palermo</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>2012</dd></div>
+        <div><dt>Chi</dt><dd>Francesco, Giuseppe e Fabio Cannone</dd></div>
+      </dl>
+      <p class="spec">Architettura e ingegneria, spazio aperto, scala urbana, interior</p>
+      <p class="note">Progetti tra riqualificazione di spazi aperti e scala urbana.</p>
+      <div class="why"><span>Perché vale una visita</span>Doppia anima architettura+ingegneria: entra nel tecnico e nel capitolato.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#3ddc97">Ditec</span><span class="chip" style="--c:#f6c453">Novoferm</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#4f8cff">Biemme</span></div>
+      <div class="foot"><a class="sito" href="https://www.cannonearchitetti.com" target="_blank" rel="noopener">cannonearchitetti.com</a></div>
+    </article>
+
+    <article class="card" data-prov="Palermo" data-tier="1"
+      data-cerca="pl5 architettura palermo restauro, rifunzionalizzazione, centro storico, palazzi biemme navello ferrero legno">
+      <div class="c-head">
+        <h3>PL5 Architettura</h3>
+        <span class="tier t1">Priorità 1</span>
+      </div>
+      <div class="citta">📍 Palermo</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>1974</dd></div>
+        <div><dt>Chi</dt><dd>Giulio e Rita Franzitta</dd></div>
+      </dl>
+      <p class="spec">Restauro, rifunzionalizzazione, centro storico, palazzi</p>
+      <p class="note">Palazzo del Principe di Lampedusa, Palazzo Rammacca, Villa Bonocore-Maletto, Palazzo Florio.</p>
+      <div class="why"><span>Perché vale una visita</span>Il restauro è il tuo terreno naturale: serramenti su misura, legno, porte storiche.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#c9d24b">Navello</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span></div>
+      <div class="foot"><a class="sito" href="https://www.pl5architettura.it" target="_blank" rel="noopener">pl5architettura.it</a></div>
+    </article>
+
+    <article class="card" data-prov="Palermo" data-tier="1"
+      data-cerca="piazza architettura palermo opere pubbliche e private, restauro, interior, urbanistica, paesaggio biemme ditec novoferm gerflor">
+      <div class="c-head">
+        <h3>Piazza Architettura</h3>
+        <span class="tier t1">Priorità 1</span>
+      </div>
+      <div class="citta">📍 Palermo</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Nicola e Giulia Piazza</dd></div>
+      </dl>
+      <p class="spec">Opere pubbliche e private, restauro, interior, urbanistica, paesaggio</p>
+      <p class="note">1° premio Istituto Ugo Foscolo (Canicattì), Teatro greco di Eraclea Minoa con Francesco Cellini, auditorium a Bagheria.</p>
+      <div class="why"><span>Perché vale una visita</span>Vince concorsi pubblici: scuole, auditorium, siti archeologici = commesse con capitolato.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#3ddc97">Ditec</span><span class="chip" style="--c:#f6c453">Novoferm</span><span class="chip" style="--c:#8b7cff">Gerflor</span></div>
+      <div class="foot"><a class="sito" href="https://www.piazzarchitettura.com" target="_blank" rel="noopener">piazzarchitettura.com</a></div>
+    </article>
+
+    <article class="card" data-prov="Palermo" data-tier="1"
+      data-cerca="provenzano architetti associati palermo residenziale, progetto urbano, interni, hospitality, spazi pubblici internorm biemme ferrero legno gerflor">
+      <div class="c-head">
+        <h3>Provenzano Architetti Associati</h3>
+        <span class="tier t1">Priorità 1</span>
+      </div>
+      <div class="citta">📍 Palermo</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>1971</dd></div>
+        <div><dt>Chi</dt><dd>Fausto e Sebastiano Provenzano</dd></div>
+      </dl>
+      <p class="spec">Residenziale, progetto urbano, interni, hospitality, spazi pubblici</p>
+      <p class="note">Oltre 50 anni di attività. Villa su Mondello Valdesi, Molo Trapezoidale, riflessioni sul porto.</p>
+      <div class="why"><span>Perché vale una visita</span>Studio storico e trasversale: entra in progetti dove si decide tutto, dalla finestra al pavimento.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#ff8a4c">Internorm</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span><span class="chip" style="--c:#8b7cff">Gerflor</span></div>
+      <div class="foot"><a class="sito" href="https://www.provenzanoarchitetti.it" target="_blank" rel="noopener">provenzanoarchitetti.it</a></div>
+    </article>
+
+    <article class="card" data-prov="Palermo" data-tier="1"
+      data-cerca="puccio collodoro architetti palermo architettura, interior design, comunicazione visiva, progetto urbano biemme gerflor ferrero legno">
+      <div class="c-head">
+        <h3>Puccio Collodoro Architetti</h3>
+        <span class="tier t1">Priorità 1</span>
+      </div>
+      <div class="citta">📍 Palermo</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Gianluca Puccio e Andrea Collodoro</dd></div>
+      </dl>
+      <p class="spec">Architettura, interior design, comunicazione visiva, progetto urbano</p>
+      <p class="note">Base a Palermo e Gela. Dimora del Capo, Studio Medico Ferro.</p>
+      <div class="why"><span>Perché vale una visita</span>Linguaggio contemporaneo e residenziale di pregio nel centro storico.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span></div>
+      <div class="foot"><a class="sito" href="https://www.pucciocollodoro.it" target="_blank" rel="noopener">pucciocollodoro.it</a></div>
+    </article>
+
+    <article class="card" data-prov="Palermo" data-tier="1"
+      data-cerca="ruffino associati palermo residenziale, hospitality, recupero di contesti identitari internorm biemme gerflor ferrero legno">
+      <div class="c-head">
+        <h3>Ruffino Associati</h3>
+        <span class="tier t1">Priorità 1</span>
+      </div>
+      <div class="citta">📍 Palermo</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>2002</dd></div>
+        <div><dt>Chi</dt><dd>Studio associato</dd></div>
+      </dl>
+      <p class="spec">Residenziale, hospitality, recupero di contesti identitari</p>
+      <p class="note">Oltre 500 progetti. Camparìa di Favignana, Dimora Cala del Pozzo, Altamora Etna, Palazzo T a Trapani.</p>
+      <div class="why"><span>Perché vale una visita</span>500+ progetti e forte vocazione hospitality: volume di lavoro costante.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#ff8a4c">Internorm</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span></div>
+      <div class="foot"><a class="sito" href="https://www.ruffinoassociati.it" target="_blank" rel="noopener">ruffinoassociati.it</a></div>
+    </article>
+
+    <article class="card" data-prov="Palermo" data-tier="1"
+      data-cerca="salvatore nigrelli architetto palermo residenziale, hospitality, exhibit design, riqualificazione internorm biemme gerflor cherubini">
+      <div class="c-head">
+        <h3>Salvatore Nigrelli Architetto</h3>
+        <span class="tier t1">Priorità 1</span>
+      </div>
+      <div class="citta">📍 Palermo</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Salvatore Nigrelli</dd></div>
+      </dl>
+      <p class="spec">Residenziale, hospitality, exhibit design, riqualificazione</p>
+      <p class="note">Sede a Palazzo Castrone Santa Ninfa, corso Vittorio Emanuele. Casena dei Colli, Villa Esse, Villa Cari, stand Mandrarossa e Baglio di Pianetto, Museo Ayrton Senna.</p>
+      <div class="why"><span>Perché vale una visita</span>Hospitality di fascia alta e allestimenti: fornitore unico per serramenti e finiture.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#ff8a4c">Internorm</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#ff6b9d">Cherubini</span></div>
+      <div class="foot"><a class="sito" href="https://www.salvatorenigrelli.com" target="_blank" rel="noopener">salvatorenigrelli.com</a></div>
+    </article>
+
+    <article class="card" data-prov="Palermo" data-tier="1"
+      data-cerca="studio 4e palermo residenziale, commerciale, paesaggio, interior design gerflor biemme cherubini ferrero legno">
+      <div class="c-head">
+        <h3>Studio 4E</h3>
+        <span class="tier t1">Priorità 1</span>
+      </div>
+      <div class="citta">📍 Palermo</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Fabio Costanzo e Maria Rosaria Piazza</dd></div>
+      </dl>
+      <p class="spec">Residenziale, commerciale, paesaggio, interior design</p>
+      <p class="note">Voga Garden Restaurant e progetti residenziali/commerciali.</p>
+      <div class="why"><span>Perché vale una visita</span>Molto attivo su commerciale e ristorazione: pavimenti e schermature sono pane quotidiano.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#ff6b9d">Cherubini</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span></div>
+      <div class="foot"><a class="sito" href="https://www.studio4e.it" target="_blank" rel="noopener">studio4e.it</a></div>
+    </article>
+
+    <article class="card" data-prov="Palermo" data-tier="1"
+      data-cerca="studio didea palermo residenziale, hospitality, spazi commerciali, interni gerflor cherubini biemme ferrero legno">
+      <div class="c-head">
+        <h3>Studio Didea</h3>
+        <span class="tier t1">Priorità 1</span>
+      </div>
+      <div class="citta">📍 Palermo</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>2012</dd></div>
+        <div><dt>Chi</dt><dd>Studio fondato da quattro architetti palermitani</dd></div>
+      </dl>
+      <p class="spec">Residenziale, hospitality, spazi commerciali, interni</p>
+      <p class="note">Casa A223, Casa A331, bistrot Cento61, Zangaloro, Burger Pass.</p>
+      <div class="why"><span>Perché vale una visita</span>Molti locali commerciali in città: qui vendi pavimento e schermature insieme al serramento.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#ff6b9d">Cherubini</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span></div>
+      <div class="foot"><a class="sito" href="https://www.studiodidea.it" target="_blank" rel="noopener">studiodidea.it</a></div>
+    </article>
+
+    <article class="card" data-prov="Palermo" data-tier="2"
+      data-cerca="bellomonte & pensabene palermo progetto contemporaneo, interior design, riqualificazione biemme internorm gerflor">
+      <div class="c-head">
+        <h3>Bellomonte & Pensabene</h3>
+        <span class="tier t2">Priorità 2</span>
+      </div>
+      <div class="citta">📍 Palermo</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Studio associato</dd></div>
+      </dl>
+      <p class="spec">Progetto contemporaneo, interior design, riqualificazione</p>
+      <p class="note">Restyling Villa Monreale e interventi residenziali, commerciali e ricettivi.</p>
+      <div class="why"><span>Perché vale una visita</span>Ville e riqualificazioni: fornitore unico per involucro e finiture.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#ff8a4c">Internorm</span><span class="chip" style="--c:#8b7cff">Gerflor</span></div>
+      <div class="foot"><a class="sito" href="https://studioarchitetturabellomontepensabene.it" target="_blank" rel="noopener">studioarchitetturabellomontepensabene.it</a></div>
+    </article>
+
+    <article class="card" data-prov="Palermo" data-tier="2"
+      data-cerca="ino piazza studio architettura palermo appartamenti e ville, showroom, allestimenti, concorsi internorm biemme ferrero legno">
+      <div class="c-head">
+        <h3>INO PIAZZA Studio Architettura</h3>
+        <span class="tier t2">Priorità 2</span>
+      </div>
+      <div class="citta">📍 Palermo</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Ino Piazza</dd></div>
+      </dl>
+      <p class="spec">Appartamenti e ville, showroom, allestimenti, concorsi</p>
+      <p class="note">Casa Cosentino, Casa Cricchio, Casa Costa, Casa Prestigiacomo, Casa Ferro, Villa D.</p>
+      <div class="why"><span>Perché vale una visita</span>Tante ville e case private: ciclo di decisione breve, il committente finale è a tavola.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#ff8a4c">Internorm</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span></div>
+      <div class="foot"><a class="sito" href="https://www.inopiazza.com" target="_blank" rel="noopener">inopiazza.com</a></div>
+    </article>
+
+    <article class="card" data-prov="Palermo" data-tier="2"
+      data-cerca="lyga studio palermo interior design, restauro, sensibilità mediterranea biemme navello ferrero legno gerflor">
+      <div class="c-head">
+        <h3>LYGA Studio</h3>
+        <span class="tier t2">Priorità 2</span>
+      </div>
+      <div class="citta">📍 Palermo</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Lycia e Gaia Trapani</dd></div>
+      </dl>
+      <p class="spec">Interior design, restauro, sensibilità mediterranea</p>
+      <p class="note">Casa a Nord-Est (palazzo settecentesco sulla Cala), Palazzo Casano.</p>
+      <div class="why"><span>Perché vale una visita</span>Restauro di appartamenti nobiliari: serramenti su misura e legno di pregio.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#c9d24b">Navello</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span><span class="chip" style="--c:#8b7cff">Gerflor</span></div>
+      <div class="foot"><a class="sito" href="https://lyga.it" target="_blank" rel="noopener">lyga.it</a></div>
+    </article>
+
+    <article class="card" data-prov="Palermo" data-tier="2"
+      data-cerca="la leta architettura palermo progettazione architettonica e architettura degli interni, residenziale e ricettivo biemme internorm gerflor">
+      <div class="c-head">
+        <h3>La Leta Architettura</h3>
+        <span class="tier t2">Priorità 2</span>
+      </div>
+      <div class="citta">📍 Palermo</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Studio palermitano</dd></div>
+      </dl>
+      <p class="spec">Progettazione architettonica e architettura degli interni, residenziale e ricettivo</p>
+      <p class="note">Pied-à-terre, Settimo Boutique Apartment, Loft in Centro Storico, Villa C, Casa Daniel.</p>
+      <div class="why"><span>Perché vale una visita</span>Boutique apartment e ricettivo: fine lavori frequente, esigenza di finiture belle e rapide.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#ff8a4c">Internorm</span><span class="chip" style="--c:#8b7cff">Gerflor</span></div>
+      <div class="foot"><a class="sito" href="https://www.laletaarchitettura.com" target="_blank" rel="noopener">laletaarchitettura.com</a></div>
+    </article>
+
+    <article class="card" data-prov="Palermo" data-tier="2"
+      data-cerca="luigi smecca architetti palermo home design e ho.re.ca. gerflor biemme cherubini ferrero legno">
+      <div class="c-head">
+        <h3>Luigi Smecca Architetti</h3>
+        <span class="tier t2">Priorità 2</span>
+      </div>
+      <div class="citta">📍 Palermo</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Luigi Smecca</dd></div>
+      </dl>
+      <p class="spec">Home design e ho.re.ca.</p>
+      <p class="note">Casa AE a Mondello, HIO Oriental Bar, I Pupi, La Cuba, Bar Galatea, Dasdia Showroom, Casale Marraffa.</p>
+      <div class="why"><span>Perché vale una visita</span>Bar e ristoranti: pavimenti resilienti, schermature e porte in un solo interlocutore.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#ff6b9d">Cherubini</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span></div>
+      <div class="foot"><a class="sito" href="https://www.luigismeccaarchitetti.it" target="_blank" rel="noopener">luigismeccaarchitetti.it</a></div>
+    </article>
+
+    <article class="card" data-prov="Palermo" data-tier="2"
+      data-cerca="pm architecture palermo edilizia residenziale privata, commerciale, ricettivo, design industriale biemme navello ferrero legno">
+      <div class="c-head">
+        <h3>PM Architecture</h3>
+        <span class="tier t2">Priorità 2</span>
+      </div>
+      <div class="citta">📍 Palermo</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>2003</dd></div>
+        <div><dt>Chi</dt><dd>Piergiorgio Miserendino</dd></div>
+      </dl>
+      <p class="spec">Edilizia residenziale privata, commerciale, ricettivo, design industriale</p>
+      <p class="note">Casa B (palazzina ottocentesca nel centro storico), Casa C+R, Casa B+M.</p>
+      <div class="why"><span>Perché vale una visita</span>Centro storico e immobili ottocenteschi: il serramento su misura è la chiave.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#c9d24b">Navello</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span></div>
+      <div class="foot"><a class="sito" href="https://www.studiopmarchitecture.it" target="_blank" rel="noopener">studiopmarchitecture.it</a></div>
+    </article>
+
+    <article class="card" data-prov="Palermo" data-tier="2"
+      data-cerca="ss studio palermo architettura, restauro, interior design, arredo su misura, graphic design biemme ferrero legno gerflor navello">
+      <div class="c-head">
+        <h3>SS Studio</h3>
+        <span class="tier t2">Priorità 2</span>
+      </div>
+      <div class="citta">📍 Palermo</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Stefano Sanfilippo</dd></div>
+      </dl>
+      <p class="spec">Architettura, restauro, interior design, arredo su misura, graphic design</p>
+      <p class="note">Gold (affittacamere di lusso), linea di arredamento BLISS presentata a Homi Milano.</p>
+      <div class="why"><span>Perché vale una visita</span>Arredo su misura e affittacamere: se disegna il mobile, disegna anche porta e finestra.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#c9d24b">Navello</span></div>
+      <div class="foot"><a class="sito" href="https://www.ssstudioarchitect.com" target="_blank" rel="noopener">ssstudioarchitect.com</a></div>
+    </article>
+
+    <article class="card" data-prov="Palermo" data-tier="2"
+      data-cerca="studio gd architetture palermo housing, retail, spazi ricettivi, luoghi di lavoro, sostenibilità gerflor biemme cherubini">
+      <div class="c-head">
+        <h3>Studio GD Architetture</h3>
+        <span class="tier t2">Priorità 2</span>
+      </div>
+      <div class="citta">📍 Palermo</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>2008</dd></div>
+        <div><dt>Chi</dt><dd>Gaspare Di Maggio</dd></div>
+      </dl>
+      <p class="spec">Housing, retail, spazi ricettivi, luoghi di lavoro, sostenibilità</p>
+      <p class="note">Casa Messina 2025, collaborazioni nel mondo bagno e superfici.</p>
+      <div class="why"><span>Perché vale una visita</span>Retail e ricettivo: superfici e schermature sono il tuo ingresso.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#ff6b9d">Cherubini</span></div>
+      <div class="foot"><span class="nosito">sito da verificare in visita</span></div>
+    </article>
+
+    <article class="card" data-prov="Palermo" data-tier="2"
+      data-cerca="studio mame palermo residenze, ville, locali commerciali, disegno su misura ferrero legno biemme gerflor">
+      <div class="c-head">
+        <h3>Studio MAMe</h3>
+        <span class="tier t2">Priorità 2</span>
+      </div>
+      <div class="citta">📍 Palermo</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>2005</dd></div>
+        <div><dt>Chi</dt><dd>Marzia Messina</dd></div>
+      </dl>
+      <p class="spec">Residenze, ville, locali commerciali, disegno su misura</p>
+      <p class="note">Casa VS, Casa GOH, Casa 2 Palme, Duo di Ville a Mondello, Cafè Lab Gallery.</p>
+      <div class="why"><span>Perché vale una visita</span>Dettaglio sartoriale: apprezza la porta e il serramento su misura, non il pezzo di catalogo.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#8b7cff">Gerflor</span></div>
+      <div class="foot"><span class="nosito">sito da verificare in visita</span></div>
+    </article>
+
+    <article class="card" data-prov="Palermo" data-tier="2"
+      data-cerca="de francisci architetti mondello (pa) interior design, ristrutturazione, lighting gerflor ferrero legno biemme">
+      <div class="c-head">
+        <h3>de Francisci Architetti</h3>
+        <span class="tier t2">Priorità 2</span>
+      </div>
+      <div class="citta">📍 Mondello (PA) · Palermo</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Studio de Francisci (sede a Mondello, attivo dagli anni '50)</dd></div>
+      </dl>
+      <p class="spec">Interior design, ristrutturazione, lighting</p>
+      <p class="note">Casa PCC con Farina Macaluso Architects, Casa a San Vito.</p>
+      <div class="why"><span>Perché vale una visita</span>Lighting e interni: attento alla luce, quindi sensibile anche al serramento e alla schermatura.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span><span class="chip" style="--c:#4f8cff">Biemme</span></div>
+      <div class="foot"><span class="nosito">sito da verificare in visita</span></div>
+    </article>
+
+    <article class="card" data-prov="Palermo" data-tier="3"
+      data-cerca="architetti fazioli associati palermo architettura e design, trasformazione degli interni ferrero legno gerflor biemme">
+      <div class="c-head">
+        <h3>Architetti Fazioli Associati</h3>
+        <span class="tier t3">Priorità 3</span>
+      </div>
+      <div class="citta">📍 Palermo</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Studio associato (90143 Palermo)</dd></div>
+      </dl>
+      <p class="spec">Architettura e design, trasformazione degli interni</p>
+      <p class="note">Appartamenti civili abitazione.</p>
+      <div class="why"><span>Perché vale una visita</span>Ristrutturazioni interne: porta e pavimento sono il pacchetto base.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#4f8cff">Biemme</span></div>
+      <div class="foot"><span class="nosito">sito da verificare in visita</span></div>
+    </article>
+
+    <article class="card" data-prov="Palermo" data-tier="3"
+      data-cerca="forme studio di architettura palermo architettura e interior design, direzione cantiere, pratiche edilizie biemme gerflor ferrero legno">
+      <div class="c-head">
+        <h3>FORME Studio di Architettura</h3>
+        <span class="tier t3">Priorità 3</span>
+      </div>
+      <div class="citta">📍 Palermo</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Studio palermitano</dd></div>
+      </dl>
+      <p class="spec">Architettura e interior design, direzione cantiere, pratiche edilizie</p>
+      <p class="note">Ufficio disegnato con il contributo di Karim Rashid, residenze e coperture storiche.</p>
+      <div class="why"><span>Perché vale una visita</span>Segue il cantiere in prima persona: chi dirige i lavori è chi decide le forniture.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span></div>
+      <div class="foot"><span class="nosito">sito da verificare in visita</span></div>
+    </article>
+
+    <article class="card" data-prov="Palermo" data-tier="3"
+      data-cerca="slc architects misilmeri (pa) residenziale, commerciale, produttivo, urbanistico novoferm ditec biemme gerflor">
+      <div class="c-head">
+        <h3>SLC architects</h3>
+        <span class="tier t3">Priorità 3</span>
+      </div>
+      <div class="citta">📍 Misilmeri (PA) · Palermo</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>2001</dd></div>
+        <div><dt>Chi</dt><dd>Salvatore Lo Cascio (oggi a Misilmeri)</dd></div>
+      </dl>
+      <p class="spec">Residenziale, commerciale, produttivo, urbanistico</p>
+      <p class="note">Villa LM nei pressi di Mondello, Casa M a Misilmeri.</p>
+      <div class="why"><span>Perché vale una visita</span>Anima urbanistica e produttiva: porte sezionali e chiusure possono aprire la strada.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#f6c453">Novoferm</span><span class="chip" style="--c:#3ddc97">Ditec</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#8b7cff">Gerflor</span></div>
+      <div class="foot"><a class="sito" href="https://www.slcarchitects.it" target="_blank" rel="noopener">slcarchitects.it</a></div>
+    </article>
+
+    <article class="card" data-prov="Palermo" data-tier="3"
+      data-cerca="studio forward palermo architettura e comunicazione, allestimento, art direction gerflor cherubini">
+      <div class="c-head">
+        <h3>Studio Forward</h3>
+        <span class="tier t3">Priorità 3</span>
+      </div>
+      <div class="citta">📍 Palermo</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>2004</dd></div>
+        <div><dt>Chi</dt><dd>Diego Emanuele</dd></div>
+      </dl>
+      <p class="spec">Architettura e comunicazione, allestimento, art direction</p>
+      <p class="note">Vinoveritas, Magnisi Studio, Generazione Alessandro a Linguaglossa.</p>
+      <div class="why"><span>Perché vale una visita</span>Spazi commerciali e brand: ottimo per il mondo bar/ristorazione.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#ff6b9d">Cherubini</span></div>
+      <div class="foot"><a class="sito" href="https://www.studioforward.it" target="_blank" rel="noopener">studioforward.it</a></div>
+    </article>
+    </div>
+  </section>
+  <section class="prov-block" data-prov="Catania">
+    <h2>Catania<span class="line"></span>
+      <span class="h-count">11 studi · 3 di priorità alta</span>
+    </h2>
+    <div class="grid">
+
+    <article class="card" data-prov="Catania" data-tier="1"
+      data-cerca="iraci architetti misterbianco ville di lusso, residenziale, interni internorm roto ferrero legno biemme">
+      <div class="c-head">
+        <h3>Iraci Architetti</h3>
+        <span class="tier t1">Priorità 1</span>
+      </div>
+      <div class="citta">📍 Misterbianco · Catania</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Antonio Iraci, architetto (laurea Reggio Calabria 1988, oltre 35 anni di carriera)</dd></div>
+      </dl>
+      <p class="spec">Ville di lusso, residenziale, interni</p>
+      <p class="note">Studio con forte presenza editoriale (Elle Decor, The Plan); progetti di ville in Sicilia e sul Lago di Como.</p>
+      <div class="why"><span>Perché vale una visita</span>Committenze di fascia alta con grande attenzione alle finiture: ville su misura dove serramenti e porte premium fanno la differenza.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#ff8a4c">Internorm</span><span class="chip" style="--c:#5ad1e6">Roto</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span><span class="chip" style="--c:#4f8cff">Biemme</span></div>
+      <div class="foot"><a class="sito" href="https://www.iraciarchitetti.com" target="_blank" rel="noopener">iraciarchitetti.com</a></div>
+    </article>
+
+    <article class="card" data-prov="Catania" data-tier="1"
+      data-cerca="lavica studio catania architettura e interior design, residenziale di lusso, hospitality e retail internorm gerflor cherubini ferrero legno">
+      <div class="c-head">
+        <h3>LAVICA studio</h3>
+        <span class="tier t1">Priorità 1</span>
+      </div>
+      <div class="citta">📍 Catania</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Giulia Doria, architetto</dd></div>
+      </dl>
+      <p class="spec">Architettura e interior design, residenziale di lusso, hospitality e retail</p>
+      <p class="note">Studio internazionale attivo tra Catania e Milano, con progetti in Sicilia, Cina, Thailandia e Francia; hotel e ville di lusso.</p>
+      <div class="why"><span>Perché vale una visita</span>Progetti hotellerie e residenziale luxury: alto potenziale per serramenti, pavimenti e schermature di fascia premium.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#ff8a4c">Internorm</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#ff6b9d">Cherubini</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span></div>
+      <div class="foot"><a class="sito" href="https://www.lavicastudio.com" target="_blank" rel="noopener">lavicastudio.com</a></div>
+    </article>
+
+    <article class="card" data-prov="Catania" data-tier="1"
+      data-cerca="uzisa hospitality design catania hospitality design: hotel, boutique hotel, b&b, ristorazione e spazi commerciali gerflor ferrero legno cherubini internorm">
+      <div class="c-head">
+        <h3>UZISA Hospitality Design</h3>
+        <span class="tier t1">Priorità 1</span>
+      </div>
+      <div class="citta">📍 Catania</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Team di architetti e designer siciliani (sedi a Palermo e Catania)</dd></div>
+      </dl>
+      <p class="spec">Hospitality design: hotel, boutique hotel, B&B, ristorazione e spazi commerciali</p>
+      <p class="note">Studio specializzato esclusivamente nell'ospitalita, dal concept al branding; progetti come Hotel Fiesta, Nautilus Hotel e Barcollo Ortigia.</p>
+      <div class="why"><span>Perché vale una visita</span>Chi progetta hotel e ristoranti ha continuo bisogno di pavimenti tecnici, porte, schermature e serramenti performanti.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span><span class="chip" style="--c:#ff6b9d">Cherubini</span><span class="chip" style="--c:#ff8a4c">Internorm</span></div>
+      <div class="foot"><a class="sito" href="https://www.uzisa.it" target="_blank" rel="noopener">uzisa.it</a></div>
+    </article>
+
+    <article class="card" data-prov="Catania" data-tier="2"
+      data-cerca="aca amore campione architettura catania architettura, interior design, retail e hospitality ditec gerflor cherubini internorm">
+      <div class="c-head">
+        <h3>ACA Amore Campione Architettura</h3>
+        <span class="tier t2">Priorità 2</span>
+      </div>
+      <div class="citta">📍 Catania</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Studio associato (Amore, Campione)</dd></div>
+      </dl>
+      <p class="spec">Architettura, interior design, retail e hospitality</p>
+      <p class="note">Studio attivo in concorsi internazionali, con progetti pubblicati e presenza a rassegne di architettura (es. Abitare, Architects meet in Selinunte) e su ArchDaily, Archello e Architizer.</p>
+      <div class="why"><span>Perché vale una visita</span>Profilo contemporaneo e internazionale, adatto a finiture di alto livello in ambienti commerciali e residenziali.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#3ddc97">Ditec</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#ff6b9d">Cherubini</span><span class="chip" style="--c:#ff8a4c">Internorm</span></div>
+      <div class="foot"><a class="sito" href="https://www.studioaca.com" target="_blank" rel="noopener">studioaca.com</a></div>
+    </article>
+
+    <article class="card" data-prov="Catania" data-tier="2"
+      data-cerca="bruno messina catania architettura e progettazione internorm ferrero legno roto">
+      <div class="c-head">
+        <h3>Bruno Messina</h3>
+        <span class="tier t2">Priorità 2</span>
+      </div>
+      <div class="citta">📍 Catania</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Bruno Messina, architetto e docente universitario</dd></div>
+      </dl>
+      <p class="spec">Architettura e progettazione</p>
+      <p class="note">Nato a Catania nel 1960, docente di Progettazione; sito web attualmente molto essenziale.</p>
+      <div class="why"><span>Perché vale una visita</span>Profilo accademico e progettuale riconosciuto: utile per credibilita' e specifiche tecniche di prodotto.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#ff8a4c">Internorm</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span><span class="chip" style="--c:#5ad1e6">Roto</span></div>
+      <div class="foot"><a class="sito" href="https://www.brunomessina.net" target="_blank" rel="noopener">brunomessina.net</a></div>
+    </article>
+
+    <article class="card" data-prov="Catania" data-tier="2"
+      data-cerca="evolutive studio catania architettura, ingegneria, interior design, edilizia scolastica e pubblica novoferm ditec internorm gerflor">
+      <div class="c-head">
+        <h3>Evolutive Studio</h3>
+        <span class="tier t2">Priorità 2</span>
+      </div>
+      <div class="citta">📍 Catania</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Team di giovani architetti e ingegneri (fondato nel 2023)</dd></div>
+      </dl>
+      <p class="spec">Architettura, ingegneria, interior design, edilizia scolastica e pubblica</p>
+      <p class="note">Vincitore del concorso per il rinnovamento di Villa Aldo Moro a Trecastagni; progetti pubblici e privati.</p>
+      <div class="why"><span>Perché vale una visita</span>Giovane studio in crescita, attento a tecnologie e materiali; utile anche su bandi e progetti pubblici.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#f6c453">Novoferm</span><span class="chip" style="--c:#3ddc97">Ditec</span><span class="chip" style="--c:#ff8a4c">Internorm</span><span class="chip" style="--c:#8b7cff">Gerflor</span></div>
+      <div class="foot"><a class="sito" href="https://evolutivestudio.com" target="_blank" rel="noopener">evolutivestudio.com</a></div>
+    </article>
+
+    <article class="card" data-prov="Catania" data-tier="2"
+      data-cerca="gilles+arch catania interior design, ville, piscine, spazi commerciali cherubini internorm gerflor">
+      <div class="c-head">
+        <h3>Gilles+Arch</h3>
+        <span class="tier t2">Priorità 2</span>
+      </div>
+      <div class="citta">📍 Catania</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Gilles Patrice Todaro, architetto</dd></div>
+      </dl>
+      <p class="spec">Interior design, ville, piscine, spazi commerciali</p>
+      <p class="note">Studio di Catania con progetti di interni ed esterni (ville, appartamenti, negozi, showroom); presente su Houzz e Homify.</p>
+      <div class="why"><span>Perché vale una visita</span>Progettazione integrata interni/esterni e piscine: potenziale per schermature solari e pavimenti indoor/outdoor.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#ff6b9d">Cherubini</span><span class="chip" style="--c:#ff8a4c">Internorm</span><span class="chip" style="--c:#8b7cff">Gerflor</span></div>
+      <div class="foot"><span class="nosito">sito da verificare in visita</span></div>
+    </article>
+
+    <article class="card" data-prov="Catania" data-tier="2"
+      data-cerca="lineatstudio provincia di catania architettura, ingegneria e design biemme internorm gerflor novoferm">
+      <div class="c-head">
+        <h3>LineaTstudio</h3>
+        <span class="tier t2">Priorità 2</span>
+      </div>
+      <div class="citta">📍 Provincia di Catania · Catania</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Salvatore Terranova (architetto) e Giorgia Testa (ingegnere)</dd></div>
+      </dl>
+      <p class="spec">Architettura, ingegneria e design</p>
+      <p class="note">Studio che unisce architettura e ingegneria, con approccio tra ricerca e territorio.</p>
+      <div class="why"><span>Perché vale una visita</span>Approccio integrato progetto/cantiere: interlocutore tecnico affidabile per pacchetti serramenti e pavimenti.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#ff8a4c">Internorm</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#f6c453">Novoferm</span></div>
+      <div class="foot"><a class="sito" href="https://www.lineatstudio.it" target="_blank" rel="noopener">lineatstudio.it</a></div>
+    </article>
+
+    <article class="card" data-prov="Catania" data-tier="2"
+      data-cerca="sebastiano adragna architetti catania residenziale, ville, interni e arredo internorm biemme ferrero legno gerflor">
+      <div class="c-head">
+        <h3>Sebastiano Adragna Architetti</h3>
+        <span class="tier t2">Priorità 2</span>
+      </div>
+      <div class="citta">📍 Catania</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Sebastiano Adragna, architetto</dd></div>
+      </dl>
+      <p class="spec">Residenziale, ville, interni e arredo</p>
+      <p class="note">Studio fondato a Catania nel 2009; profilo pubblicato su Archello, attivo su residenziale e interni.</p>
+      <div class="why"><span>Perché vale una visita</span>Attivo nel residenziale e negli interni di pregio a Catania: canale diretto per finiture premium.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#ff8a4c">Internorm</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span><span class="chip" style="--c:#8b7cff">Gerflor</span></div>
+      <div class="foot"><span class="nosito">sito da verificare in visita</span></div>
+    </article>
+
+    <article class="card" data-prov="Catania" data-tier="2"
+      data-cerca="studio michele sclafani catania ristrutturazioni, riconversione in hotel, ville ditec novoferm gerflor internorm">
+      <div class="c-head">
+        <h3>Studio Michele Sclafani</h3>
+        <span class="tier t2">Priorità 2</span>
+      </div>
+      <div class="citta">📍 Catania</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Michele Sclafani</dd></div>
+      </dl>
+      <p class="spec">Ristrutturazioni, riconversione in hotel, ville</p>
+      <p class="note">Sede in Corso Italia 207, Catania; si occupa di ristrutturazioni e riconversione di immobili in hotel.</p>
+      <div class="why"><span>Perché vale una visita</span>Specializzazione su hotel e strutture ricettive: contesti in cui porte automatiche, pavimenti resilienti e serramenti hanno volumi significativi.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#3ddc97">Ditec</span><span class="chip" style="--c:#f6c453">Novoferm</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#ff8a4c">Internorm</span></div>
+      <div class="foot"><a class="sito" href="https://www.michelesclafani.com" target="_blank" rel="noopener">michelesclafani.com</a></div>
+    </article>
+
+    <article class="card" data-prov="Catania" data-tier="2"
+      data-cerca="bureau69 architects catania architettura residenziale, interior design, project management, hospitality e commerciale selezionato internorm biemme gerflor ferrero legno">
+      <div class="c-head">
+        <h3>bureau69 architects</h3>
+        <span class="tier t2">Priorità 2</span>
+      </div>
+      <div class="citta">📍 Catania</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Max Strano, architetto (RIBA Chartered Architect, Passivhaus designer)</dd></div>
+      </dl>
+      <p class="spec">Architettura residenziale, interior design, project management, hospitality e commerciale selezionato</p>
+      <p class="note">Studio indipendente con esperienza internazionale (Italia, Spagna, UK, Brasile), rientrato in Sicilia nel 2022. Finalista ai Sunday Times British Home Awards 2018. Segue committenti esteri su permessi e cantiere.</p>
+      <div class="why"><span>Perché vale una visita</span>Posizionamento su sostenibilita' e certificazione Passivhaus: i serramenti ad alte prestazioni e il dettaglio costruttivo sono centrali nel suo metodo.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#ff8a4c">Internorm</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span></div>
+      <div class="foot"><a class="sito" href="https://bureau69.com" target="_blank" rel="noopener">bureau69.com</a></div>
+    </article>
+    </div>
+  </section>
+  <section class="prov-block" data-prov="Ragusa">
+    <h2>Ragusa<span class="line"></span>
+      <span class="h-count">7 studi · 6 di priorità alta</span>
+    </h2>
+    <div class="grid">
+
+    <article class="card" data-prov="Ragusa" data-tier="1"
+      data-cerca="architrend architecture ragusa architettura residenziale, hospitality, interni e opere pubbliche internorm biemme gerflor ferrero legno">
+      <div class="c-head">
+        <h3>Architrend Architecture</h3>
+        <span class="tier t1">Priorità 1</span>
+      </div>
+      <div class="citta">📍 Ragusa</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Carmelo Tumino e Gaetano Manganello</dd></div>
+      </dl>
+      <p class="spec">Architettura residenziale, hospitality, interni e opere pubbliche</p>
+      <p class="note">Studio di riferimento del ragusano; firma di Alba Palace Hotel e di numerosi progetti residenziali di pregio. Pubblicato su The Plan, Divisare e ArchDaily.</p>
+      <div class="why"><span>Perché vale una visita</span>Progetta residenze di fascia alta e strutture ricettive: serramenti performanti, pavimenti resilienti e porte interne di design trovano qui un interlocutore abituato alla qualita.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#ff8a4c">Internorm</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span></div>
+      <div class="foot"><a class="sito" href="https://architrend.it" target="_blank" rel="noopener">architrend.it</a></div>
+    </article>
+
+    <article class="card" data-prov="Ragusa" data-tier="1"
+      data-cerca="daaa haus ragusa interior design, hospitality, retail, residenziale e product design gerflor ferrero legno cherubini novoferm">
+      <div class="c-head">
+        <h3>DAAA Haus</h3>
+        <span class="tier t1">Priorità 1</span>
+      </div>
+      <div class="citta">📍 Ragusa</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>2009</dd></div>
+        <div><dt>Chi</dt><dd>Studio multidisciplinare fondato a Malta nel 2009; sedi a Malta, Milano, Ragusa e Mumbai</dd></div>
+      </dl>
+      <p class="spec">Interior design, hospitality, retail, residenziale e product design</p>
+      <p class="note">Ampia rete internazionale con sede italiana a Ragusa (The Gallery, Viale Europa 163). Lavora su concept di ospitalita e spazi commerciali.</p>
+      <div class="why"><span>Perché vale una visita</span>Interior design contract e hospitality: forte domanda di pavimenti, porte e soluzioni di arredo per spazi ricettivi e commerciali.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span><span class="chip" style="--c:#ff6b9d">Cherubini</span><span class="chip" style="--c:#f6c453">Novoferm</span></div>
+      <div class="foot"><a class="sito" href="https://daaahaus.com" target="_blank" rel="noopener">daaahaus.com</a></div>
+    </article>
+
+    <article class="card" data-prov="Ragusa" data-tier="1"
+      data-cerca="dfg architetti associati ragusa ville di lusso, residenziale, commerciale e bioarchitettura internorm biemme roto gerflor">
+      <div class="c-head">
+        <h3>DFG Architetti Associati</h3>
+        <span class="tier t1">Priorità 1</span>
+      </div>
+      <div class="citta">📍 Ragusa</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Studio associato (sedi a Roma e Ragusa)</dd></div>
+      </dl>
+      <p class="spec">Ville di lusso, residenziale, commerciale e bioarchitettura</p>
+      <p class="note">Approccio sartoriale e sostenibile; progetti pubblicati su Area, Interni e Archello. Premio Regula 2024; sede a Ragusa, Viale dei Platani 52-54.</p>
+      <div class="why"><span>Perché vale una visita</span>Ville di pregio e locali commerciali: forte attenzione a materiali e dettaglio esecutivo, ideale per serramenti e finiture di fascia alta.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#ff8a4c">Internorm</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#5ad1e6">Roto</span><span class="chip" style="--c:#8b7cff">Gerflor</span></div>
+      <div class="foot"><a class="sito" href="https://www.dfgarchitetti.it" target="_blank" rel="noopener">dfgarchitetti.it</a></div>
+    </article>
+
+    <article class="card" data-prov="Ragusa" data-tier="1"
+      data-cerca="giuseppe gurrieri studio ragusa restauro, ristrutturazione, nuove edificazioni, interior e architettura sostenibile internorm biemme roto ferrero legno">
+      <div class="c-head">
+        <h3>Giuseppe Gurrieri Studio</h3>
+        <span class="tier t1">Priorità 1</span>
+      </div>
+      <div class="citta">📍 Ragusa</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Giuseppe Gurrieri</dd></div>
+      </dl>
+      <p class="spec">Restauro, ristrutturazione, nuove edificazioni, interior e architettura sostenibile</p>
+      <p class="note">Approccio al riuso e alla sostenibilita (NZEB); progetti pubblicati su Domus, Elle Decor, Platform e Lotus. Tra i lavori il Museo del Costume a Donnafugata.</p>
+      <div class="why"><span>Perché vale una visita</span>Il restauro di edifici storici richiede serramenti su misura ad alte prestazioni e componenti affidabili: interlocutore ideale per Internorm, Biemme e Roto.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#ff8a4c">Internorm</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#5ad1e6">Roto</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span></div>
+      <div class="foot"><a class="sito" href="https://www.giuseppegurrieri.it" target="_blank" rel="noopener">giuseppegurrieri.it</a></div>
+    </article>
+
+    <article class="card" data-prov="Ragusa" data-tier="1"
+      data-cerca="maria giuseppina grasso cannizzo vittoria restauro, riuso, architettura contemporanea e residenziale internorm biemme roto navello">
+      <div class="c-head">
+        <h3>Maria Giuseppina Grasso Cannizzo</h3>
+        <span class="tier t1">Priorità 1</span>
+      </div>
+      <div class="citta">📍 Vittoria · Ragusa</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>1986</dd></div>
+        <div><dt>Chi</dt><dd>Maria Giuseppina Grasso Cannizzo</dd></div>
+      </dl>
+      <p class="spec">Restauro, riuso, architettura contemporanea e residenziale</p>
+      <p class="note">Una delle architette italiane piu premiate (Premio Italiano di Architettura); studio attivo dal 1986. Progetti a Noto, Marina di Ragusa e nel ragusano. Sito ufficiale non individuato con certezza.</p>
+      <div class="why"><span>Perché vale una visita</span>Interventi di restauro e riuso di alta qualita, dove materiali e serramenti su misura sono centrali.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#ff8a4c">Internorm</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#5ad1e6">Roto</span><span class="chip" style="--c:#c9d24b">Navello</span></div>
+      <div class="foot"><span class="nosito">sito da verificare in visita</span></div>
+    </article>
+
+    <article class="card" data-prov="Ragusa" data-tier="1"
+      data-cerca="studio gum ragusa architettura, interior design e hospitality ferrero legno gerflor cherubini internorm">
+      <div class="c-head">
+        <h3>Studio GUM</h3>
+        <span class="tier t1">Priorità 1</span>
+      </div>
+      <div class="citta">📍 Ragusa</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>2009</dd></div>
+        <div><dt>Chi</dt><dd>Valentina Giampiccolo e Giuseppe Minaldi</dd></div>
+      </dl>
+      <p class="spec">Architettura, interior design e hospitality</p>
+      <p class="note">Duo siciliano attivo dal 2009; noto per l'Hotel Asmundo di Gisira a Catania. Sede in Via Ecce Homo 123, Ragusa.</p>
+      <div class="why"><span>Perché vale una visita</span>Lavora molto su hospitality e interni di carattere: perfetto per porte interne Ferrero Legno, pavimenti Gerflor e schermature Cherubini.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#ff6b9d">Cherubini</span><span class="chip" style="--c:#ff8a4c">Internorm</span></div>
+      <div class="foot"><a class="sito" href="https://www.studiogum.it" target="_blank" rel="noopener">studiogum.it</a></div>
+    </article>
+
+    <article class="card" data-prov="Ragusa" data-tier="2"
+      data-cerca="darch2 scicli progettazione architettonica residenziale, commerciale e interni gerflor ferrero legno cherubini novoferm">
+      <div class="c-head">
+        <h3>Darch2</h3>
+        <span class="tier t2">Priorità 2</span>
+      </div>
+      <div class="citta">📍 Scicli · Ragusa</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>2015</dd></div>
+        <div><dt>Chi</dt><dd>Viviana Pitrolo e Danilo Demaio</dd></div>
+      </dl>
+      <p class="spec">Progettazione architettonica residenziale, commerciale e interni</p>
+      <p class="note">Studio fondato nel 2015 a Scicli; firma il progetto di ristrutturazione del ristorante 'La Grotta'. Pubblicato nel libro 'Architetti italiani'.</p>
+      <div class="why"><span>Perché vale una visita</span>Attivo su residenziale e commerciale nel ragusano con attenzione agli interni: ricettivo per pavimenti, porte e arredi tecnici.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span><span class="chip" style="--c:#ff6b9d">Cherubini</span><span class="chip" style="--c:#f6c453">Novoferm</span></div>
+      <div class="foot"><a class="sito" href="https://darch2.it" target="_blank" rel="noopener">darch2.it</a></div>
+    </article>
+    </div>
+  </section>
+  <section class="prov-block" data-prov="Trapani">
+    <h2>Trapani<span class="line"></span>
+      <span class="h-count">7 studi · 1 di priorità alta</span>
+    </h2>
+    <div class="grid">
+
+    <article class="card" data-prov="Trapani" data-tier="1"
+      data-cerca="noi studio architettura trapani architettura residenziale, commerciale e turistico-ricettiva; interior design; render e modellazione 3d biemme internorm gerflor ferrero legno">
+      <div class="c-head">
+        <h3>Noi Studio Architettura</h3>
+        <span class="tier t1">Priorità 1</span>
+      </div>
+      <div class="citta">📍 Trapani</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>2015</dd></div>
+        <div><dt>Chi</dt><dd>Francesca Culcasi, Francesco Santulli, Enrico Milana</dd></div>
+      </dl>
+      <p class="spec">Architettura residenziale, commerciale e turistico-ricettiva; interior design; render e modellazione 3D</p>
+      <p class="note">Sede in Via Passo Enea 80, 91100 Trapani. Progetti di hotel e borghi (es. Borgo Difali) e locali/ristoranti.</p>
+      <div class="why"><span>Perché vale una visita</span>Studio giovane e molto attivo su ristrutturazioni di hotel e strutture ricettive nel trapanese: forte potenziale su serramenti, pavimenti resilienti e schermature solari.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#ff8a4c">Internorm</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span></div>
+      <div class="foot"><a class="sito" href="https://www.noistudioarchitettura.it" target="_blank" rel="noopener">noistudioarchitettura.it</a></div>
+    </article>
+
+    <article class="card" data-prov="Trapani" data-tier="2"
+      data-cerca="ad'a atelier d'architettura trapani recupero e nuove costruzioni, progettazione di interni, arredi e spazi commerciali ferrero legno gerflor cherubini biemme">
+      <div class="c-head">
+        <h3>Ad'A Atelier d'Architettura</h3>
+        <span class="tier t2">Priorità 2</span>
+      </div>
+      <div class="citta">📍 Trapani</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Gianni Ingardia, Giusi Mondino</dd></div>
+      </dl>
+      <p class="spec">Recupero e nuove costruzioni, progettazione di interni, arredi e spazi commerciali</p>
+      <p class="note">Via Conte Agostino Pepoli 30, 91100 Trapani. Profilo anche su Divisare e Houzz.</p>
+      <div class="why"><span>Perché vale una visita</span>Visione artigianale dell'architettura con forte focus su interni e arredi: ideale per porte interne, pavimenti e sistemi di schermatura nel residenziale e nel commerciale.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#ff6b9d">Cherubini</span><span class="chip" style="--c:#4f8cff">Biemme</span></div>
+      <div class="foot"><a class="sito" href="https://www.gianniingardia.com" target="_blank" rel="noopener">gianniingardia.com</a></div>
+    </article>
+
+    <article class="card" data-prov="Trapani" data-tier="2"
+      data-cerca="madremateria pantelleria atelier di architettura, interior design e paesaggio; restauro dei dammusi, hospitality di lusso, product design internorm cherubini biemme ferrero legno">
+      <div class="c-head">
+        <h3>Madremateria</h3>
+        <span class="tier t2">Priorità 2</span>
+      </div>
+      <div class="citta">📍 Pantelleria · Trapani</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>2023</dd></div>
+        <div><dt>Chi</dt><dd>Elena Pancaldi (fondatrice)</dd></div>
+      </dl>
+      <p class="spec">Atelier di architettura, interior design e paesaggio; restauro dei dammusi, hospitality di lusso, product design</p>
+      <p class="note">MADREMATERIA srls, via Rizzo 55, 91017 Pantelleria. Fondato nel 2023; Elena Pancaldi opera sull'isola da oltre vent'anni.</p>
+      <div class="why"><span>Perché vale una visita</span>Specialista nel recupero dei dammusi e nelle residenze/retreat di lusso a Pantelleria: committenza alta gamma ideale per serramenti, schermature e finiture.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#ff8a4c">Internorm</span><span class="chip" style="--c:#ff6b9d">Cherubini</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span></div>
+      <div class="foot"><a class="sito" href="https://www.madremateria.it" target="_blank" rel="noopener">madremateria.it</a></div>
+    </article>
+
+    <article class="card" data-prov="Trapani" data-tier="2"
+      data-cerca="studio boma - maurizio oddo erice architettura contemporanea, paesaggio e giardini, restauro architettonico e ambientale internorm biemme cherubini roto">
+      <div class="c-head">
+        <h3>Studio BOMA - Maurizio Oddo</h3>
+        <span class="tier t2">Priorità 2</span>
+      </div>
+      <div class="citta">📍 Erice · Trapani</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>2002</dd></div>
+        <div><dt>Chi</dt><dd>Maurizio Oddo (fondatore), con Alessandro Barracco</dd></div>
+      </dl>
+      <p class="spec">Architettura contemporanea, paesaggio e giardini, restauro architettonico e ambientale</p>
+      <p class="note">Fondato nel 2002. Maurizio Oddo insegna alla Universita Kore di Enna. Opera pubblicata su Domus (Casa Ditta a Erice). Sito ufficiale dello studio non reperito; profili su Divisare e Archilovers.</p>
+      <div class="why"><span>Perché vale una visita</span>Architetto di riferimento nel trapanese, attento al paesaggio e alla qualita del costruito: progetti residenziali di pregio adatti a serramenti e schermature di alta gamma.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#ff8a4c">Internorm</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#ff6b9d">Cherubini</span><span class="chip" style="--c:#5ad1e6">Roto</span></div>
+      <div class="foot"><span class="nosito">sito da verificare in visita</span></div>
+    </article>
+
+    <article class="card" data-prov="Trapani" data-tier="3"
+      data-cerca="aalcubo studio petrosino architettura, design e interior, ristrutturazioni residenziali ferrero legno gerflor cherubini">
+      <div class="c-head">
+        <h3>AalCubo Studio</h3>
+        <span class="tier t3">Priorità 3</span>
+      </div>
+      <div class="citta">📍 Petrosino · Trapani</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Gianvito Piccione</dd></div>
+      </dl>
+      <p class="spec">Architettura, design e interior, ristrutturazioni residenziali</p>
+      <p class="note">Via Michele Angileri 157, 91020 Petrosino (TP). Studio attivo tra Petrosino e Marsala.</p>
+      <div class="why"><span>Perché vale una visita</span>Studio attivo su residenziale e interni nell'area tra Petrosino e Marsala; buon presidio per porte interne, pavimenti e schermature.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#ff6b9d">Cherubini</span></div>
+      <div class="foot"><a class="sito" href="https://www.aalcubo.it" target="_blank" rel="noopener">aalcubo.it</a></div>
+    </article>
+
+    <article class="card" data-prov="Trapani" data-tier="3"
+      data-cerca="n38lab - n38 laboratorio di architettura marsala architettura, restauro, bioedilizia, arredamento e interior design ferrero legno gerflor biemme internorm">
+      <div class="c-head">
+        <h3>N38lab - N38 Laboratorio di Architettura</h3>
+        <span class="tier t3">Priorità 3</span>
+      </div>
+      <div class="citta">📍 Marsala · Trapani</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Valentina Giacalone, Antonella Moceri</dd></div>
+      </dl>
+      <p class="spec">Architettura, restauro, bioedilizia, arredamento e interior design</p>
+      <p class="note">Sede a Marsala (TP). Sito ufficiale non reperito; profili su homify e Houzz.</p>
+      <div class="why"><span>Perché vale una visita</span>Studio attivo sul restauro e sugli interni nel marsalese, sensibile ai materiali e alla bioedilizia: buon interlocutore per porte, pavimenti e serramenti.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#ff8a4c">Internorm</span></div>
+      <div class="foot"><span class="nosito">sito da verificare in visita</span></div>
+    </article>
+
+    <article class="card" data-prov="Trapani" data-tier="3"
+      data-cerca="studio d'aleo s.r.l. mazara del vallo progettazione architettonica e urbanistica con approccio orientato alla sostenibilita biemme gerflor novoferm">
+      <div class="c-head">
+        <h3>Studio D'Aleo S.r.l.</h3>
+        <span class="tier t3">Priorità 3</span>
+      </div>
+      <div class="citta">📍 Mazara del Vallo · Trapani</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>D'Aleo (studio societario)</dd></div>
+      </dl>
+      <p class="spec">Progettazione architettonica e urbanistica con approccio orientato alla sostenibilita</p>
+      <p class="note">Via Capitolo 8, 91026 Mazara del Vallo. Tel. 0923 838328. Sito ufficiale non reperito funzionante.</p>
+      <div class="why"><span>Perché vale una visita</span>Studio radicato nel mazarese con tradizione pluriennale nell'edilizia residenziale e nell'urbanistica: utile per finestre e pavimenti su volumi residenziali.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#f6c453">Novoferm</span></div>
+      <div class="foot"><span class="nosito">sito da verificare in visita</span></div>
+    </article>
+    </div>
+  </section>
+  <section class="prov-block" data-prov="Agrigento">
+    <h2>Agrigento<span class="line"></span>
+      <span class="h-count">6 studi · 1 di priorità alta</span>
+    </h2>
+    <div class="grid">
+
+    <article class="card" data-prov="Agrigento" data-tier="1"
+      data-cerca="cottone+indelicato architetti sciacca architettura contemporanea e paesaggio; residenziale di pregio, edicola funeraria, spazi culturali internorm biemme cherubini ferrero legno">
+      <div class="c-head">
+        <h3>Cottone+Indelicato Architetti</h3>
+        <span class="tier t1">Priorità 1</span>
+      </div>
+      <div class="citta">📍 Sciacca · Agrigento</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>2009</dd></div>
+        <div><dt>Chi</dt><dd>Mario Cottone, Gregorio Indelicato</dd></div>
+      </dl>
+      <p class="spec">Architettura contemporanea e paesaggio; residenziale di pregio, edicola funeraria, spazi culturali</p>
+      <p class="note">Via Porta San Pietro 25, 92019 Sciacca. Formati con David Chipperfield e RCR Arquitectes. Premio Inarch Sicilia 2026. Presenti su Divisare e Archello.</p>
+      <div class="why"><span>Perché vale una visita</span>Tra gli studi piu premiati della provincia di Agrigento, con progetti residenziali di alta gamma e grande attenzione al dettaglio costruttivo e al paesaggio.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#ff8a4c">Internorm</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#ff6b9d">Cherubini</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span></div>
+      <div class="foot"><a class="sito" href="https://www.cottoneindelicato.com" target="_blank" rel="noopener">cottoneindelicato.com</a></div>
+    </article>
+
+    <article class="card" data-prov="Agrigento" data-tier="3"
+      data-cerca="kudra srl - giuseppe grizzaffi favara servizi tecnici integrati, riqualificazione urbana, architettura e ingegneria biemme gerflor novoferm">
+      <div class="c-head">
+        <h3>Kudra Srl - Giuseppe Grizzaffi</h3>
+        <span class="tier t3">Priorità 3</span>
+      </div>
+      <div class="citta">📍 Favara · Agrigento</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Giuseppe Grizzaffi e Kudra Srl</dd></div>
+      </dl>
+      <p class="spec">Servizi tecnici integrati, riqualificazione urbana, architettura e ingegneria</p>
+      <p class="note">Kudra Srl con sede a Favara (AG). Interventi di riqualificazione con Giuseppe Grizzaffi, attivi negli Open Studi Aperti. Sito ufficiale non reperito.</p>
+      <div class="why"><span>Perché vale una visita</span>Struttura tecnica integrata su riqualificazione urbana nel comprensorio agrigentino: utile per interventi su involucri e finiture in edilizia diffusa.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#f6c453">Novoferm</span></div>
+      <div class="foot"><span class="nosito">sito da verificare in visita</span></div>
+    </article>
+
+    <article class="card" data-prov="Agrigento" data-tier="3"
+      data-cerca="lab.design agrigento architettura e interior design, residenze integrate nel paesaggio gerflor ferrero legno cherubini biemme">
+      <div class="c-head">
+        <h3>LAB.DESIGN</h3>
+        <span class="tier t3">Priorità 3</span>
+      </div>
+      <div class="citta">📍 Agrigento</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Danea Salerno</dd></div>
+      </dl>
+      <p class="spec">Architettura e interior design, residenze integrate nel paesaggio</p>
+      <p class="note">Sede in Via Santo Spirito 4, 92100 Agrigento. Sito ufficiale non reperito.</p>
+      <div class="why"><span>Perché vale una visita</span>Architetta e interior designer con team di progettisti, attiva su residenze integrate nel paesaggio agrigentino: adatta a pavimenti, porte interne e schermature.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span><span class="chip" style="--c:#ff6b9d">Cherubini</span><span class="chip" style="--c:#4f8cff">Biemme</span></div>
+      <div class="foot"><span class="nosito">sito da verificare in visita</span></div>
+    </article>
+
+    <article class="card" data-prov="Agrigento" data-tier="3"
+      data-cerca="openworks architetture menfi architettura, padiglioni espositivi, progettazione urbana biemme gerflor cherubini">
+      <div class="c-head">
+        <h3>OpenWorks Architetture</h3>
+        <span class="tier t3">Priorità 3</span>
+      </div>
+      <div class="citta">📍 Menfi · Agrigento</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Team di architetti e ingegneri</dd></div>
+      </dl>
+      <p class="spec">Architettura, padiglioni espositivi, progettazione urbana</p>
+      <p class="note">Via Della Vittoria 230/A, 92013 Menfi (AG); sede secondaria in Via Pompei 32, Sciacca. Sito ufficiale non reperito.</p>
+      <div class="why"><span>Perché vale una visita</span>Tra i protagonisti degli Open Studi Aperti della provincia di Agrigento, attivo tra Menfi e Sciacca: potenziale su serramenti, pavimenti e schermature.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#ff6b9d">Cherubini</span></div>
+      <div class="foot"><span class="nosito">sito da verificare in visita</span></div>
+    </article>
+
+    <article class="card" data-prov="Agrigento" data-tier="3"
+      data-cerca="salvatore catanzaro architetto sciacca architettura e progettazione biemme gerflor">
+      <div class="c-head">
+        <h3>Salvatore Catanzaro Architetto</h3>
+        <span class="tier t3">Priorità 3</span>
+      </div>
+      <div class="citta">📍 Sciacca · Agrigento</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Salvatore Catanzaro</dd></div>
+      </dl>
+      <p class="spec">Architettura e progettazione</p>
+      <p class="note">Via Alcide De Gasperi 52, Sciacca (AG). Attivo negli Open Studi Aperti e nell'Ordine di Agrigento. Sito ufficiale non reperito.</p>
+      <div class="why"><span>Perché vale una visita</span>Professionista radicato a Sciacca e presente nelle iniziative dell'Ordine Agrigento: presidio utile su residenziale e ristrutturazioni.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#8b7cff">Gerflor</span></div>
+      <div class="foot"><span class="nosito">sito da verificare in visita</span></div>
+    </article>
+
+    <article class="card" data-prov="Agrigento" data-tier="3"
+      data-cerca="vid'a – visioni d'architettura menfi (ag) ristrutturazioni, interni, nuove costruzioni, spazi commerciali biemme gerflor">
+      <div class="c-head">
+        <h3>vid'A – Visioni d'Architettura</h3>
+        <span class="tier t3">Priorità 3</span>
+      </div>
+      <div class="citta">📍 Menfi (AG) · Agrigento</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Gruppo attivo tra Menfi e il palermitano</dd></div>
+      </dl>
+      <p class="spec">Ristrutturazioni, interni, nuove costruzioni, spazi commerciali</p>
+      <p class="note">Pratica orientata alla personalizzazione e alla direzione lavori.</p>
+      <div class="why"><span>Perché vale una visita</span>Realtà giovane e dinamica: più facile entrare come nuovo fornitore.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#8b7cff">Gerflor</span></div>
+      <div class="foot"><span class="nosito">sito da verificare in visita</span></div>
+    </article>
+    </div>
+  </section>
+  <section class="prov-block" data-prov="Caltanissetta">
+    <h2>Caltanissetta<span class="line"></span>
+      <span class="h-count">3 studi · 0 di priorità alta</span>
+    </h2>
+    <div class="grid">
+
+    <article class="card" data-prov="Caltanissetta" data-tier="2"
+      data-cerca="davide cammarata architetto caltanissetta residenziale, centri storici, progettazione di pregio internorm biemme ferrero legno gerflor">
+      <div class="c-head">
+        <h3>Davide Cammarata Architetto</h3>
+        <span class="tier t2">Priorità 2</span>
+      </div>
+      <div class="citta">📍 Caltanissetta</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>1999</dd></div>
+        <div><dt>Chi</dt><dd>Davide Cammarata</dd></div>
+      </dl>
+      <p class="spec">Residenziale, centri storici, progettazione di pregio</p>
+      <p class="note">Attivo tra Caltanissetta e Palermo dal 1999. Premiato al Premio di Architettura ANCE Catania per una casa unifamiliare a Caltanissetta. Regesto progetti e riconoscimenti pubblicato sul suo sito.</p>
+      <div class="why"><span>Perché vale una visita</span>Il profilo più premiato della provincia di Caltanissetta: case unifamiliari di pregio dove serramento e finiture contano.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#ff8a4c">Internorm</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span><span class="chip" style="--c:#8b7cff">Gerflor</span></div>
+      <div class="foot"><a class="sito" href="https://www.davidecammarata.it" target="_blank" rel="noopener">davidecammarata.it</a></div>
+    </article>
+
+    <article class="card" data-prov="Caltanissetta" data-tier="3"
+      data-cerca="c+c cucuzza cavallaro architetti gela architettura e interior design, edifici residenziali gerflor ferrero legno biemme">
+      <div class="c-head">
+        <h3>C+C Cucuzza Cavallaro Architetti</h3>
+        <span class="tier t3">Priorità 3</span>
+      </div>
+      <div class="citta">📍 Gela · Caltanissetta</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Cucuzza e Cavallaro</dd></div>
+      </dl>
+      <p class="spec">Architettura e interior design, edifici residenziali</p>
+      <p class="note">Studio di architettura e interior design attivo a Gela su progettazione residenziale. Sito ufficiale non individuato; presente su piattaforme di settore.</p>
+      <div class="why"><span>Perché vale una visita</span>Riferimento sull'area di Gela per residenziale e interni: da agganciare alla prima visita.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span><span class="chip" style="--c:#4f8cff">Biemme</span></div>
+      <div class="foot"><span class="nosito">sito da verificare in visita</span></div>
+    </article>
+
+    <article class="card" data-prov="Caltanissetta" data-tier="3"
+      data-cerca="rumeo arch. giuseppe caltanissetta progettazione edile, residenziale biemme gerflor ferrero legno">
+      <div class="c-head">
+        <h3>Rumeo Arch. Giuseppe</h3>
+        <span class="tier t3">Priorità 3</span>
+      </div>
+      <div class="citta">📍 Caltanissetta</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Giuseppe Rumeo</dd></div>
+      </dl>
+      <p class="spec">Progettazione edile, residenziale</p>
+      <p class="note">Studio di progettazione edile a Caltanissetta.</p>
+      <div class="why"><span>Perché vale una visita</span>Studio tecnico radicato sul territorio: presidio utile per ristrutturazioni e nuove costruzioni.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span></div>
+      <div class="foot"><a class="sito" href="https://www.studiorumeo.com" target="_blank" rel="noopener">studiorumeo.com</a></div>
+    </article>
+    </div>
+  </section>
+  <section class="prov-block" data-prov="Siracusa">
+    <h2>Siracusa<span class="line"></span>
+      <span class="h-count">3 studi · 2 di priorità alta</span>
+    </h2>
+    <div class="grid">
+
+    <article class="card" data-prov="Siracusa" data-tier="1"
+      data-cerca="moncada rangel siracusa architettura boutique: hospitality, residenze di lusso e spazi commerciali internorm biemme gerflor cherubini">
+      <div class="c-head">
+        <h3>Moncada Rangel</h3>
+        <span class="tier t1">Priorità 1</span>
+      </div>
+      <div class="citta">📍 Siracusa</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Francesco Moncada e Mafalda Rangel</dd></div>
+      </dl>
+      <p class="spec">Architettura boutique: hospitality, residenze di lusso e spazi commerciali</p>
+      <p class="note">Studio siracusano aperto al Mediterraneo, attivo su Siracusa, Noto, Modica, Ragusa ed Etna. Progetti pubblicati su Domus, AD ed Elle Decor.</p>
+      <div class="why"><span>Perché vale una visita</span>Ville di lusso e strutture ricettive nel Val di Noto: target ideale per serramenti alta gamma, schermature solari e finiture di pregio.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#ff8a4c">Internorm</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#ff6b9d">Cherubini</span></div>
+      <div class="foot"><a class="sito" href="https://www.moncadarangel.com" target="_blank" rel="noopener">moncadarangel.com</a></div>
+    </article>
+
+    <article class="card" data-prov="Siracusa" data-tier="1"
+      data-cerca="vincenzo latina architetto siracusa restauro, architettura contemporanea, spazi pubblici e allestimenti internorm biemme roto navello">
+      <div class="c-head">
+        <h3>Vincenzo Latina Architetto</h3>
+        <span class="tier t1">Priorità 1</span>
+      </div>
+      <div class="citta">📍 Siracusa</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Vincenzo Latina</dd></div>
+      </dl>
+      <p class="spec">Restauro, architettura contemporanea, spazi pubblici e allestimenti</p>
+      <p class="note">Medaglia d'Oro all'Architettura Italiana 2012; professore di Composizione Architettonica all'Universita di Catania. Sede in Via Colle Temenite 7, Siracusa.</p>
+      <div class="why"><span>Perché vale una visita</span>Il restauro e la riqualificazione di edifici storici a Ortigia e dintorni richiedono serramenti e componenti su misura di alta gamma.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#ff8a4c">Internorm</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#5ad1e6">Roto</span><span class="chip" style="--c:#c9d24b">Navello</span></div>
+      <div class="foot"><a class="sito" href="http://www.vincenzolatina.com" target="_blank" rel="noopener">http://vincenzolatina.com</a></div>
+    </article>
+
+    <article class="card" data-prov="Siracusa" data-tier="2"
+      data-cerca="architecture lab studio avola progettazione architettonica e strutturale, interior design e ristrutturazioni biemme gerflor ferrero legno cherubini">
+      <div class="c-head">
+        <h3>Architecture Lab Studio</h3>
+        <span class="tier t2">Priorità 2</span>
+      </div>
+      <div class="citta">📍 Avola · Siracusa</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Ing. Vincenzo Calvo</dd></div>
+      </dl>
+      <p class="spec">Progettazione architettonica e strutturale, interior design e ristrutturazioni</p>
+      <p class="note">Studio tecnico ad Avola (SR); attivita di progettazione, direzione lavori e arredi per clienti privati e commerciali.</p>
+      <div class="why"><span>Perché vale una visita</span>Molte ristrutturazioni residenziali e commerciali tra Avola, Noto e Siracusa: ricettivo per serramenti, pavimenti e porte.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span><span class="chip" style="--c:#ff6b9d">Cherubini</span></div>
+      <div class="foot"><a class="sito" href="https://www.architecturelabstudio.com" target="_blank" rel="noopener">architecturelabstudio.com</a></div>
+    </article>
+    </div>
+  </section>
+  <section class="prov-block" data-prov="Messina">
+    <h2>Messina<span class="line"></span>
+      <span class="h-count">2 studi · 0 di priorità alta</span>
+    </h2>
+    <div class="grid">
+
+    <article class="card" data-prov="Messina" data-tier="2"
+      data-cerca="a.r.i.a. progetti messina architettura, ingegneria, impianti, bioedilizia, modellazione 3d internorm novoferm ditec roto">
+      <div class="c-head">
+        <h3>A.R.I.A. Progetti</h3>
+        <span class="tier t2">Priorità 2</span>
+      </div>
+      <div class="citta">📍 Messina</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Studio associato di architetti e ingegneri</dd></div>
+      </dl>
+      <p class="spec">Architettura, ingegneria, impianti, bioedilizia, modellazione 3D</p>
+      <p class="note">Sede in Via Placida 26, Messina; attenzione a tematiche energetiche e ambientali e all'integrazione architettura/impianti.</p>
+      <div class="why"><span>Perché vale una visita</span>Focus su efficienza energetica e integrazione impianti: serramenti performanti e chiusure entrano naturalmente nel progetto.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#ff8a4c">Internorm</span><span class="chip" style="--c:#f6c453">Novoferm</span><span class="chip" style="--c:#3ddc97">Ditec</span><span class="chip" style="--c:#5ad1e6">Roto</span></div>
+      <div class="foot"><a class="sito" href="https://www.ariaprogetti.it" target="_blank" rel="noopener">ariaprogetti.it</a></div>
+    </article>
+
+    <article class="card" data-prov="Messina" data-tier="3"
+      data-cerca="m+c de francesco architetti messina architettura e progettazione su misura internorm biemme ferrero legno gerflor">
+      <div class="c-head">
+        <h3>M+C De Francesco Architetti</h3>
+        <span class="tier t3">Priorità 3</span>
+      </div>
+      <div class="citta">📍 Messina</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Studio De Francesco (soci M+C)</dd></div>
+      </dl>
+      <p class="spec">Architettura e progettazione su misura</p>
+      <p class="note">Studio con sede a Messina (98122). Sito ufficiale non verificato.</p>
+      <div class="why"><span>Perché vale una visita</span>Studio attivo su progetti su misura a Messina: interlocutore locale utile per finiture e serramenti.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#ff8a4c">Internorm</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span><span class="chip" style="--c:#8b7cff">Gerflor</span></div>
+      <div class="foot"><span class="nosito">sito da verificare in visita</span></div>
+    </article>
+    </div>
+  </section>
+  <section class="prov-block" data-prov="Enna">
+    <h2>Enna<span class="line"></span>
+      <span class="h-count">1 studi · 0 di priorità alta</span>
+    </h2>
+    <div class="grid">
+
+    <article class="card" data-prov="Enna" data-tier="3"
+      data-cerca="studio architetto ciantia piazza armerina architettura e progettazione biemme gerflor ferrero legno">
+      <div class="c-head">
+        <h3>Studio Architetto Ciantia</h3>
+        <span class="tier t3">Priorità 3</span>
+      </div>
+      <div class="citta">📍 Piazza Armerina · Enna</div>
+      <dl class="meta">
+        <div><dt>Dal</dt><dd>—</dd></div>
+        <div><dt>Chi</dt><dd>Arch. Ciantia</dd></div>
+      </dl>
+      <p class="spec">Architettura e progettazione</p>
+      <p class="note">Piazza Armerina, Via Mons. La Vaccara 24 — 94015 Enna. Tel. 370 1212833.</p>
+      <div class="why"><span>Perché vale una visita</span>Uno dei pochi studi strutturati dell'ennese, su un territorio con forte patrimonio storico da recuperare.</div>
+      <div class="proponi"><span class="lbl">Cosa proporre</span><span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span></div>
+      <div class="foot"><span class="nosito">sito da verificare in visita</span></div>
+    </article>
+    </div>
+  </section>
+  <div class="empty" id="empty">Nessuno studio corrisponde al filtro.</div>
+
+  <h2>Come approcciarli<span class="line"></span></h2>
+  <div class="panel">
+    <ol class="steps">
+      <li><b>1</b><div><b>Vai con il disegno, non con il catalogo.</b> Portagli una sezione di serramento quotata
+        e una portafinestra con le misure reali: gli architetti comprano dettaglio tecnico, non brochure.</div></li>
+      <li><b>2</b><div><b>Parti dal prodotto che gli manca</b>, non dal tuo listino. Bar e ristoranti → pavimento
+        e schermature. Restauro e centro storico → serramento in legno su misura.</div></li>
+      <li><b>3</b><div><b>Chiedi il cantiere in corso, non il progetto futuro.</b> Una ristrutturazione già aperta
+        ha decisioni da prendere questa settimana.</div></li>
+      <li><b>4</b><div><b>Offriti come unico interlocutore.</b> Con nove mandati copri finestra, porta interna,
+        porta automatica, pavimento, tenda e legno: è il vantaggio che un rivenditore singolo non ha.</div></li>
+      <li><b>5</b><div><b>Raggruppa le visite per provincia</b>, non per studio. Un giro Catania–Siracusa–Ragusa
+        rende molto più di tre trasferte separate.</div></li>
+      <li><b>6</b><div><b>Torna ogni 4-6 settimane</b> con un aggiornamento vero (nuova finitura, nuovo sistema,
+        una referenza appena posata). La seconda visita è quella che conta.</div></li>
+    </ol>
+  </div>
+
+  <h2>Dove recuperare i contatti mancanti<span class="line"></span></h2>
+  <div class="panel">
+    <p class="h-note" style="margin-top:0">Gli Ordini provinciali pubblicano e aggiornano l'albo dei
+      professionisti: è la via più rapida per email e telefono degli studi senza sito.</p>
+    <div class="ordine" style="margin-top:14px">
+      <div><b>Consiglio Nazionale + i 9 Ordini provinciali siciliani</b></div>
+      <div>Palermo · Catania · Messina · Siracusa · Ragusa · Trapani · Agrigento · Caltanissetta · Enna</div>
+      <div><a href="https://www.ordinearchitettipalermo.it" target="_blank" rel="noopener">ordinearchitettipalermo.it</a> — da lì si
+        raggiungono anche gli altri otto Ordini.</div>
+    </div>
+  </div>
+
+  <h2>I mandanti che rappresentiamo<span class="line"></span></h2>
+  <div class="panel">
+    <div class="mandanti">
+      <span class="chip" style="--c:#4f8cff">Biemme</span><span class="chip" style="--c:#ff8a4c">Internorm</span><span class="chip" style="--c:#3ddc97">Ditec</span><span class="chip" style="--c:#f6c453">Novoferm</span><span class="chip" style="--c:#b98a5a">Ferrero Legno</span><span class="chip" style="--c:#8b7cff">Gerflor</span><span class="chip" style="--c:#ff6b9d">Cherubini</span><span class="chip" style="--c:#5ad1e6">Roto</span><span class="chip" style="--c:#c9d24b">Navello</span>
+    </div>
+    <p class="h-note" style="margin-bottom:0">Nove mandanti tra serramenti, porte, chiusure automatiche,
+      pavimenti resilienti, schermature solari e legno.</p>
+  </div>
+
+  <footer>
+    <div><b>Fonti:</b> riviste e portali di settore (Archi&amp;Interiors, Divisare, Archilovers, Archello),
+      siti ufficiali degli studi, Ordini degli Architetti provinciali.</div>
+    <div>Informazioni tratte da fonti pubbliche; i recapiti degli studi senza sito sono da verificare alla prima visita.</div>
+    <div style="margin-top:8px">A cura di <b>Ellesse Rappresentanze</b> · Letterio Silipigni · ottobre 2026</div>
+  </footer>
+
+</main>
+
+<script>
+(function(){
+  var grid=document.querySelectorAll('.prov-block, .card'),
+      sezioni=[].slice.call(document.querySelectorAll('.prov-block')),
+      cards=[].slice.call(document.querySelectorAll('.card')),
+      q=document.getElementById('q'),
+      empt=document.getElementById('empty'),
+      bt=[].slice.call(document.querySelectorAll('.f[data-t]')),
+      bp=[].slice.call(document.querySelectorAll('.f.prov')),
+      tier=0, prov='';
+
+  function apply(){
+    var s=(q.value||'').trim().toLowerCase(), vis=0;
+    cards.forEach(function(c){
+      var okT = !tier || c.dataset.tier===String(tier);
+      var okP = !prov || c.dataset.prov===prov;
+      var okS = !s || c.dataset.cerca.indexOf(s)>-1;
+      var ok = okT && okP && okS;
+      c.style.display = ok ? '' : 'none';
+      if(ok) vis++;
+    });
+    sezioni.forEach(function(sez){
+      var n=[].slice.call(sez.querySelectorAll('.card')).filter(function(c){ return c.style.display!=='none'; }).length;
+      sez.style.display = n ? '' : 'none';
+      var hc=sez.querySelector('.h-count');
+      if(hc) hc.textContent = n + ' studi visibili';
+    });
+    empt.style.display = vis ? 'none' : 'block';
+  }
+  bt.forEach(function(b){ b.addEventListener('click', function(){
+    tier=parseInt(b.dataset.t,10);
+    bt.forEach(function(x){ x.setAttribute('aria-pressed', x===b?'true':'false'); }); apply();
+  }); });
+  bp.forEach(function(b){ b.addEventListener('click', function(){
+    prov=b.dataset.p;
+    bp.forEach(function(x){ x.setAttribute('aria-pressed', x===b?'true':'false'); }); apply();
+  }); });
+  q.addEventListener('input', apply);
+})();
+</script>
+</body>
+</html>
